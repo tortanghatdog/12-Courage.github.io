@@ -749,7 +749,7 @@ body {
 }
 
 /* MOBILE: Make collage cards full width */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .collage-grid {
     grid-template-columns: 1fr !important;
   }
@@ -765,4 +765,4 @@ body {
   .collage-img {
     height: 250px !important; /* Consistent height on mobile */
   }
-}
+}*/
