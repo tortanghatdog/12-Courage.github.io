@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>12 - Courage | S/Y 2025–2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- COVER -->
+  <section class="cover">
+    <div class="cover-lines"></div>
+
+    <div class="cover-photo-cluster">
+
+      <div class="photo-frame" style="width: 160px; left: 10px; top: 10px; transform: rotate(-6deg); z-index: 3;" onclick="openLightbox('assets/pictorial.jpg', 'Class Pictorial — our best day ever!')">
+        <div class="tape tape-tl" style="background: rgba(255, 220, 130, 0.6)"></div>
+        <div class="photo-placeholder" style="width: 144px; height: 100px">
+          <img src="assets/pictorial.jpg" alt="Class Pictorial" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <span class="caption">Pictorial</span>
+      </div>
+      
+      <div class="photo-frame" style="
+            width: 145px;
+            right: 8px;
+            top: 30px;
+            transform: rotate(5deg);
+            z-index: 2;
+          " onclick="openLightbox('', 'Graduation practice — we made it!')">
+        <div class="tape tape-tr" style="background: rgba(123, 167, 188, 0.55)"></div>
+        <div class="photo-placeholder" style="width: 129px; height: 100px">
+          
+        </div>
+        <span class="caption">Graduation practice</span>
+      </div>
+      
+      <div class="photo-frame" style="
+            width: 175px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-2deg);
+            top: 130px;
+            z-index: 4;
+          " onclick="openLightbox('', 'Our classroom — Section Courage!')">
+        <div class="tape tape-h" style="background: rgba(232, 160, 180, 0.55)"></div>
+        <div class="photo-placeholder" style="width: 159px; height: 115px">
+          
+        </div>
+        <span class="caption">Courage</span>
+      </div>
+      
+      <div class="photo-frame" style="
+            width: 115px;
+            right: 6px;
+            bottom: 0;
+            transform: rotate(4deg);
+            z-index: 3;
+          " onclick="openLightbox('', 'Celebration time!')">
+        <div class="tape tape-v" style="background: rgba(143, 188, 143, 0.55)"></div>
+        <div class="photo-placeholder" style="width: 99px; height: 80px">
+          
+        </div>
+        <span class="caption">Celebrate!</span>
+      </div>
+    </div>
+
+    <div class="cover-title-block">
+      <span class="grade-label">✦ Grade 12 ✦</span>
+      <span class="main-title">Courage</span>
+      <span class="subtitle">School Year 2025 – 2026</span>
+      <span class="year-badge">Our Story in Photos</span>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Scroll through our memories</span>
+      <span style="font-size: 20px">↓</span>
+    </div>
+  </section>
+
+  <!-- ════ NAV ════ -->
+  <nav class="nav-tabs" id="nav">
+    <div class="nav-tab active" onclick="scrollTo('photos')"><a href="#photos">Photos</a></div>
+    <div class="nav-tab" onclick="scrollTo('videos')"><a href="#videos">Videos</a></div>
+    <div class="nav-tab" onclick="scrollTo('people')"><a href="#people">People</a></div>
+  </nav>
+
+  <!-- ════ PHOTOS ════ -->
+  <section class="section" id="photos">
+    <h2 class="section-title">Photo Album</h2>
+    <div class="section-rule"></div>
+
+    <div class="collage-grid">
+
+      <!-- collage-card (Normal, Tall & Wide) -->
+      <!-- washi (Top, Corner & Full) -->
+
+      <div class="collage-card wide" style="transform: rotate(-1.5deg)" onclick="
+            openLightbox('assets/pictorial.jpg', 'Class Pictorial — our best day ever!')
+          ">
+        <div class="washi washi-top" style="background: rgba(255, 220, 130, 0.65)"></div>
+        <div class="collage-img" style="height: auto; width: auto;"><img src="assets/pictorial.jpg" alt="Sunrise flag ceremony" height="100%""></div>
+        <span class="card-caption">Class Pictorial</span>
+      </div>
+
+      <div class="collage-card" style="transform: rotate(1.2deg)"
+        onclick="openLightbox('assets/career.jpg', 'Career day — future goals!')">
+        <div class="washi washi-top" style="background: rgba(232, 160, 180, 0.7)"></div>
+        <div class="collage-img" style="height: auto; width: auto;"><img src="assets/career.jpg" alt="Career day" height="100%"></div>
+        <span class="card-caption">Career day</span>
+      </div>
+
+      <div class="collage-card tall" style="transform: rotate(1.2deg);"
+        onclick="openLightbox('assets/officer wency and his side kicks.jpg', 'Officer Wency - with his sidekicks')
+        ">
+        <div class="washi washi-top" style="background: rgba(143, 188, 143, 0.7)"></div>
+        <div class="collage-img" style="height: auto; width: auto;"><img src="assets/officer wency and his side kicks.jpg" alt="" height="100%"></div>
+        <span class="card-caption">Officer Wency</span>
+      </div>
+
+      <div class="collage-card" style="transform: rotate(0.8deg)"
+        onclick="openLightbox('assets/recollection.jpg', 'Recollection - a day of reflection and fun!')">
+        <div class="washi washi-corner" style="background: rgba(143, 188, 143, 0.7)"></div>
+        <div class="collage-img" style="height: auto; width: auto;"><img src="assets/recollection.jpg" alt="Recollection" height="100%"></div>
+        <span class="card-caption">Recollection</span>
+      </div>
+
+      <div class="collage-card wide" style="transform: rotate(-0.6deg)"
+        onclick="openLightbox('assets/recollection+.jpg', 'Recollection - a day of reflection and fun!')">
+        <div class="washi washi-top" style="background: rgba(123, 167, 188, 0.65)"></div>
+        <div class="collage-img" style="height: auto; width: auto;">
+          <img src="assets/recollection+.jpg" alt="Recollection" height="100%">
+        </div>
+        <span class="card-caption">Recollection</span>
+      </div>
+
+      <div class="collage-card" style="transform: rotate(-2deg)"
+        onclick="openLightbox('assets/chibugan.jpg', 'Chibugan Time - ')">
+        <div class="washi washi-top" style="background: rgba(232, 160, 180, 0.65)"></div>
+        <div class="collage-img" style="height: auto; width: auto;">
+          <img src="assets/chibugan.jpg" height="100%">
+        </div>
+        <span class="card-caption">Chibugan</span>
+      </div>
+
+      <div class="collage-card" style="transform: rotate(-1.3deg)"
+        onclick="openLightbox('assets/maam tine party gift.jpg', 'Ma’am Tine’s Christmas Party Gift Exchange — so much fun!')">
+        <div class="washi washi-corner" style="background: rgba(255, 220, 130, 0.65)">
+        </div>
+        <div class="collage-img" style="height: auto; width: auto;">
+          <img src="assets/maam tine party gift.jpg" alt="Ma’am Tine’s Christmas Party Gift Exchange" height="100%">
+        </div>
+        <span class="card-caption">Ma’am Tine’s Christmas Party Gift Exchange</span>
+      </div>
+
+      <div class="collage-card wide" style="transform: rotate(2deg)"
+        onclick="openLightbox('assets/Christmas Party.jpg', 'Christmas party — lots of fun!')">
+        <div class="washi washi-top" style="background: rgba(212, 169, 106, 0.65)"></div>
+        <div class="collage-img" style="height: auto; width: auto;">
+          <img src="assets/Christmas Party.jpg" alt="Christmas party" height="100%">
+        </div>
+        <span class="card-caption">Christmas Party</span>
+      </div>
+
+      <div class="collage-card" style="transform: rotate(0.4deg)"
+        onclick="openLightbox('assets/high notes.jpg', 'Angeline’s reaching high notes - with high ✘ - with hight notes ✔')">
+        <div class="washi washi-top" style="background: rgba(192, 57, 43, 0.35)">
+        </div>
+        <div class="collage-img" style="height: auto; width: auto;">
+          <img src="assets/high notes.jpg" alt="Angeline’s reaching high notes" height="100%">
+        </div>
+        <span class="card-caption">Angeline’s Reaching High Notes</span>
+      </div>
+
+      <div class="collage-card tall" style="transform: rotate(-0.3deg)"
+        onclick="openLightbox('assets/hot king.jpg', 'King Felomino - Hot King')">
+        <div class="washi washi-top" style="background: rgba(123, 167, 188, 0.65)"></div>
+        <div class="collage-img" style="height: auto; width: auto;">
+          <img src="assets/hot king.jpg" height="auto">
+        </div>
+        <span class="card-caption">King Felomino</span>
+      </div>
+
+      <div class="collage-card" style="transform: rotate(1.5deg)" onclick="openLightbox('assets/back hug.jpg', 'Back Hug - gayyy')">
+        <div class="washi washi-corner" style="background: rgba(143, 188, 143, 0.65)"></div>
+        <div class="collage-img" style="height: auto; width: auto;">
+          <img src="assets/back hug.jpg" height="100%">
+        </div>
+        <span class="card-caption">Back Hug</span>
+      </div>
+
+      <div class="collage-card wide" style="transform: rotate(1.1deg)"
+        onclick="openLightbox('assets/seniors night.jpg', 'Seniors Night — the night we owned the stage!')">
+        <div class="washi washi-top" style="background: rgba(212, 169, 106, 0.65)"></div>
+        <div class="collage-img"><img src="assets/seniors night.jpg" alt="Seniors Night" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span class="card-caption">Seniors Night</span>
+      </div>
+
+      <div class="collage-card" onclick="openLightbox('assets/stop dance went wrong.jpg', 'Stop dance went wrong - multiverse of gayness')">
+        <div class="washi washi-corner" style="background: rgba(143, 188, 143, 0.65)"></div>
+        <div class="collage-img" style="height: auto; width: auto;">
+          <img src="assets/stop dance went wrong.jpg" height="100%">
+        </div>
+        <span class="card-caption">Stop dance went wrong</span>
+      </div>
+
+      <div class="collage-card" style="transform: rotate(-2.1deg)"
+        onclick="openLightbox('assets/rock star joshua.jpg', 'Rock Star Joshua — ')">
+        <div class="washi washi-corner" style="background: rgba(192, 57, 43, 0.45)"></div>
+        <div class="collage-img"><img src="assets/rock star joshua.jpg" alt="Rock Star Joshua" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span class="card-caption">Rock Star Joshua</span>
+      </div>
+
+      <div class="collage-card tall" style="transform: rotate(0.9deg)"
+        onclick="openLightbox('assets/js dance practice.jpg', 'JS Dance Practice — ')">
+        <div class="washi washi-top" style="background: rgba(232, 160, 180, 0.65)"></div>
+        <div class="collage-img"><img src="assets/js dance practice.jpg" alt="JS Dance Practice" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span class="card-caption">JS Dance Practice</span>
+      </div>
+
+      <div class="collage-card" style="transform: rotate(-1.8deg)"
+        onclick="openLightbox('assets/middle finger ni warlito.jpg', 'Middle finger ni Warlito')">
+        <div class="washi washi-corner" style="background: rgba(143, 188, 143, 0.65)"></div>
+        <div class="collage-img"><img src="assets/middle finger ni warlito.jpg" alt="Middle finger ni Warlito" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span class="card-caption">Warlito Being Warlito</span>
+      </div>
+
+      <div class="collage-card wide" style="transform: rotate(-0.8deg)"
+        onclick="openLightbox('assets/KTLA.jpg', 'KTLA — ')">
+        <div class="washi washi-top" style="background: rgba(123, 167, 188, 0.65)"></div>
+        <div class="collage-img"><img src="assets/KTLA.jpg" alt="KTLA" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span class="card-caption">KTLA</span>
+      </div>
+
+      <div class="collage-card" style="transform: rotate(2.3deg)"
+        onclick="openLightbox('assets/what a face.jpg', 'What a face')">
+        <div class="washi washi-corner" style="background: rgba(255, 220, 130, 0.65)"></div>
+        <div class="collage-img"><img src="assets/what a face.jpg" alt="What a face" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span class="card-caption">What a Face</span>
+      </div>
+
+      <div class="collage-card tall" style="transform: rotate(-1.4deg)"
+        onclick="openLightbox('assets/im2.jpg', 'ICT Immersion Succesful')">
+        <div class="washi washi-top" style="background: rgba(143, 188, 143, 0.65)"></div>
+        <div class="collage-img"><img src="assets/im2.jpg" alt="Casual Vibes" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span class="card-caption">ICT Immersion Succesful</span>
+      </div>
+
+      <div class="collage-card wide" style="transform: rotate(1.7deg)"
+        onclick="openLightbox('assets/Rekados culminating.jpg', 'Rekados Culminating — our Cookery stars shine! 🍳')">
+        <div class="washi washi-top" style="background: rgba(212, 169, 106, 0.7)"></div>
+        <div class="collage-img"><img src="assets/Rekados culminating.jpg" alt="Rekados Culminating" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span class="card-caption">Rekados Culminating</span>
+      </div>
+
+      <div class="collage-card" style="transform: rotate(-0.5deg)"
+        onclick="openLightbox('assets/js sir otep.jpg', 'JS with Sir Otep — memories with our mentor 🎓')">
+        <div class="washi washi-top" style="background: rgba(123, 167, 188, 0.6)"></div>
+        <div class="collage-img"><img src="assets/js sir otep.jpg" alt="JS with Sir Otep" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span class="card-caption">JS with Sir Otep</span>
+      </div>
+
+      <div class="collage-card" style="transform: rotate(1.6deg)"
+        onclick="openLightbox('assets/survival game final boses.jpg', 'Survival Game Final Boss')">
+        <div class="washi washi-corner" style="background: rgba(255, 220, 130, 0.65)"></div>
+        <div class="collage-img"><img src="assets/survival game final boses.jpg" alt="Survival Game Final Boss" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span class="card-caption">Survival Game Finals</span>
+      </div>
+
+      <div class="collage-card wide" style="transform: rotate(0.6deg)"
+        onclick="openLightbox('assets/NCII Passers.jpg', 'NCII Passers — certified and proud! 🏅')">
+        <div class="washi washi-top" style="background: rgba(232, 160, 180, 0.65)"></div>
+        <div class="collage-img"><img src="assets/NCII Passers.jpg" alt="NCII Passers" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span class="card-caption">NCII Passers</span>
+      </div>
+
+      <div class="collage-card wide" style="transform: rotate(1.3deg)"
+        onclick="openLightbox('assets/caoI awarding.jpg', 'CAO I Awarding — excellence recognized! 🌟')">
+        <div class="washi washi-top" style="background: rgba(255, 220, 130, 0.7)"></div>
+        <div class="collage-img"><img src="assets/caoI awarding.jpg" alt="CAO I Awarding" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span class="card-caption">Casureco I Immersion Completers Awarding</span>
+      </div>
+
+      <div class="collage-card" style="transform: rotate(0.3deg)"
+        onclick="openLightbox('assets/sir ryan.jpg', 'Sir Ryan — the legend himself 🙌')">
+        <div class="washi washi-top" style="background: rgba(192, 57, 43, 0.35)"></div>
+        <div class="collage-img"><img src="assets/sir ryan.jpg" alt="Sir Ryan" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span class="card-caption">Sir Ryan</span>
+      </div>
+
+      <div class="collage-card" style="transform: rotate(2.0deg)"
+        onclick="openLightbox('assets/im3.jpg', 'After Awarding')">
+        <div class="washi washi-top" style="background: rgba(143, 188, 143, 0.6)"></div>
+        <div class="collage-img"><img src="assets/im3.jpg" alt="Squad Goals" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span class="card-caption">After Awarding</span>
+      </div>
+
+      <!-- JS.jpg — landscape wide, JS prom/event -->
+      <div class="collage-card wide" style="transform: rotate(-1.2deg)"
+        onclick="openLightbox('assets/js.jpg', 'JS Prom Night — the most magical evening ✨')">
+        <div class="washi washi-top" style="background: rgba(232, 160, 180, 0.6)"></div>
+        <div class="collage-img"><img src="assets/js.jpg" alt="JS Prom" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span class="card-caption">JS Prom Night ✨</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════ VIDEOS ════ -->
+  <section class="section" id="videos" style="background: var(--paper)">
+    <h2 class="section-title">Video Reels</h2>
+    <div class="section-rule"></div>
+
+    <h3 class="direction">Swipe left for more videos →</h3>
+
+    <div class="video-scroll">
+
+      <div class="video-thumb" onclick="openVideoLightbox('videos/christmasparty.mp4', 'Christmas Party')">
+        <div class="tape tape-h" style="background:rgba(255,220,130,0.55);position:absolute;top:-6px;left:20%;width:60%;height:12px;"></div>
+        <div class="video-preview" style="background:linear-gradient(135deg,#5c1a1a 0%,#c0392b 100%)">
+          <video class="vid-poster" src="videos/christmasparty.mp4" preload="metadata" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.7;" onloadedmetadata="this.currentTime=1"></video>
+          <div class="play-btn">▶</div>
+        </div>
+        <span class="card-caption" style="font-size:12px">Christmas Party</span>
+      </div>
+
+      <div class="video-thumb" onclick="openVideoLightbox('videos/Christmas Party.mp4', 'Christmas Party Highlights')">
+        <div class="tape tape-h" style="background:rgba(232,160,180,0.55);position:absolute;top:-6px;left:20%;width:60%;height:12px;"></div>
+        <div class="video-preview" style="background:linear-gradient(135deg,#4a1c3a 0%,#8a3060 100%)">
+          <video class="vid-poster" src="videos/Christmas Party.mp4" preload="metadata" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.7;" onloadedmetadata="this.currentTime=1"></video>
+          <div class="play-btn">▶</div>
+        </div>
+        <span class="card-caption" style="font-size:12px">Christmas Party Highlights</span>
+      </div>
+
+      <div class="video-thumb" onclick="openVideoLightbox('videos/cleaning.mp4', 'Cleaning Day')">
+        <div class="tape tape-h" style="background:rgba(143,188,143,0.55);position:absolute;top:-6px;left:20%;width:60%;height:12px;"></div>
+        <div class="video-preview" style="background:linear-gradient(135deg,#1a3d1a 0%,#2e7d32 100%)">
+          <video class="vid-poster" src="videos/cleaning.mp4" preload="metadata" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.7;" onloadedmetadata="this.currentTime=1"></video>
+          <div class="play-btn">▶</div>
+        </div>
+        <span class="card-caption" style="font-size:12px">Cleaning Day</span>
+      </div>
+
+      <div class="video-thumb" onclick="openVideoLightbox('videos/Dancing Jairo.mp4', 'Dancing Jairo')">
+        <div class="tape tape-h" style="background:rgba(212,169,106,0.55);position:absolute;top:-6px;left:20%;width:60%;height:12px;"></div>
+        <div class="video-preview" style="background:linear-gradient(135deg,#3d2a00 0%,#a06000 100%)">
+          <video class="vid-poster" src="videos/Dancing Jairo.mp4" preload="metadata" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.7;" onloadedmetadata="this.currentTime=1"></video>
+          <div class="play-btn">▶</div>
+        </div>
+        <span class="card-caption" style="font-size:12px">Dancing Jairo</span>
+      </div>
+
+      <div class="video-thumb" onclick="openVideoLightbox('videos/game of thrones.mp4', 'Survival Game')">
+        <div class="tape tape-h" style="background:rgba(123,167,188,0.55);position:absolute;top:-6px;left:20%;width:60%;height:12px;"></div>
+        <div class="video-preview" style="background:linear-gradient(135deg,#0a0a1a 0%,#1a2a4a 100%)">
+          <video class="vid-poster" src="videos/game of thrones.mp4" preload="metadata" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.7;" onloadedmetadata="this.currentTime=1"></video>
+          <div class="play-btn">▶</div>
+        </div>
+        <span class="card-caption" style="font-size:12px">Survival Game</span>
+      </div>
+
+      <div class="video-thumb" onclick="openVideoLightbox('videos/ILY Edilen.mp4', 'ILY Edilen')">
+        <div class="tape tape-h" style="background:rgba(232,160,180,0.55);position:absolute;top:-6px;left:20%;width:60%;height:12px;"></div>
+        <div class="video-preview" style="background:linear-gradient(135deg,#5c0030 0%,#c0146e 100%)">
+          <video class="vid-poster" src="videos/ILY Edilen.mp4" preload="metadata" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.7;" onloadedmetadata="this.currentTime=1"></video>
+          <div class="play-btn">▶</div>
+        </div>
+        <span class="card-caption" style="font-size:12px">ILY Edilen</span>
+      </div>
+
+      <div class="video-thumb" onclick="openVideoLightbox('videos/js dance practice.mp4', 'JS Dance Practice')">
+        <div class="tape tape-h" style="background:rgba(255,220,130,0.55);position:absolute;top:-6px;left:20%;width:60%;height:12px;"></div>
+        <div class="video-preview" style="background:linear-gradient(135deg,#1a003d 0%,#5e00c0 100%)">
+          <video class="vid-poster" src="videos/js dance practice.mp4" preload="metadata" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.7;" onloadedmetadata="this.currentTime=1"></video>
+          <div class="play-btn">▶</div>
+        </div>
+        <span class="card-caption" style="font-size:12px">JS Dance Practice</span>
+      </div>
+
+      <div class="video-thumb" onclick="openVideoLightbox('videos/last man standing.mp4', 'Last Man Standing')">
+        <div class="tape tape-h" style="background:rgba(143,188,143,0.55);position:absolute;top:-6px;left:20%;width:60%;height:12px;"></div>
+        <div class="video-preview" style="background:linear-gradient(135deg,#0f3d1a 0%,#1a6b30 100%)">
+          <video class="vid-poster" src="videos/last man standing.mp4" preload="metadata" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.7;" onloadedmetadata="this.currentTime=1"></video>
+          <div class="play-btn">▶</div>
+        </div>
+        <span class="card-caption" style="font-size:12px">Last Man Standing</span>
+      </div>
+
+      <div class="video-thumb" onclick="openVideoLightbox('videos/mj.mp4', 'MJ?')">
+        <div class="tape tape-h" style="background:rgba(212,169,106,0.55);position:absolute;top:-6px;left:20%;width:60%;height:12px;"></div>
+        <div class="video-preview" style="background:linear-gradient(135deg,#1a1a00 0%,#6b6b00 100%)">
+          <video class="vid-poster" src="videos/mj.mp4" preload="metadata" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.7;" onloadedmetadata="this.currentTime=1"></video>
+          <div class="play-btn">▶</div>
+        </div>
+        <span class="card-caption" style="font-size:12px">MJ?</span>
+      </div>
+
+      <div class="video-thumb" onclick="openVideoLightbox('videos/sayawan.mp4', 'Sayawan')">
+        <div class="tape tape-h" style="background:rgba(123,167,188,0.55);position:absolute;top:-6px;left:20%;width:60%;height:12px;"></div>
+        <div class="video-preview" style="background:linear-gradient(135deg,#003d5c 0%,#006090 100%)">
+          <video class="vid-poster" src="videos/sayawan.mp4" preload="metadata" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.7;" onloadedmetadata="this.currentTime=1"></video>
+          <div class="play-btn">▶</div>
+        </div>
+        <span class="card-caption" style="font-size:12px">Sayawan</span>
+      </div>
+
+      <div class="video-thumb" onclick="openVideoLightbox('videos/teroristang Mj.mp4', 'Teroristang MJ')">
+        <div class="tape tape-h" style="background:rgba(255,220,130,0.55);position:absolute;top:-6px;left:20%;width:60%;height:12px;"></div>
+        <div class="video-preview" style="background:linear-gradient(135deg,#1a0000 0%,#5c0000 100%)">
+          <video class="vid-poster" src="videos/teroristang Mj.mp4" preload="metadata" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.7;" onloadedmetadata="this.currentTime=1"></video>
+          <div class="play-btn">▶</div>
+        </div>
+        <span class="card-caption" style="font-size:12px">Teroristang MJ</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ PEOPLE ════ -->
+  <section class="section people-section" id="people">
+    <h2 class="section-title">Our People</h2>
+    <div class="section-rule"></div>
+
+    <!-- Teachers -->
+
+    <div class="teacher-block fade-in">
+      <div class="teacher-name">Ms. Cristine Quiom Gorubat</div>
+      <span class="teacher-role">✦ Class Adviser</span>
+    </div>
+
+    <!-- Students -->
+    <div class="students-title">Students — Section Courage</div>
+    <div class="students-strand"><h1>✦ Information and Communications Technology ✦</h1></div>
+
+    <div class="students-grid">
+      <div class="student-card fade-in">
+        <div>
+          <div class="student-name">Azur, John Faust Walter B.</div>
+          <div class="student-num">#01</div>
+        </div>
+      </div>
+
+      <div class="student-card fade-in">
+        <div>
+          <div class="student-name">Azurias, Glenn Carl Autor</div>
+          <div class="student-num">#02</div>
+        </div>
+      </div>
+
+      <div class="student-card fade-in">
+        <div>
+          <div class="student-name">Base, Jairus R.</div>
+          <div class="student-num">#03</div>
+        </div>
+      </div>  
+
+      <div class="student-card fade-in">
+        <div>
+          <div class="student-name">Martinez, Wency B.</div>
+          <div class="student-num">#04</div>
+        </div>
+      </div>
+
+      <div class="student-card fade-in">
+        <div>
+          <div class="student-name">Monterde, Mario Joseph</div>
+          <div class="student-num">#05</div>
+        </div>
+      </div>
+
+      <div class="student-card fade-in">
+        <div>
+          <div class="student-name">Presco, Mark Anthony C.</div>
+          <div class="student-num">#06</div>
+        </div>
+      </div>
+
+      <div class="student-card fade-in">
+        <div>
+          <div class="student-name">Remolano, Warlito Jr. B.</div>
+          <div class="student-num">#07</div>
+        </div>
+      </div>
+
+      <div class="student-card fade-in">
+        <div>
+          <div class="student-name">Sultan, Ignacio III A.</div>
+          <div class="student-num">#08</div>
+        </div>
+      </div>
+
+      <div class="student-card fade-in">
+        <div>
+          <div class="student-name">Abainza, Shiela Mae B.</div>
+          <div class="student-num">#09</div>
+        </div>
+      </div>
+
+      <div class="student-card fade-in">
+        <div>
+          <div class="student-name">Bongcolmo, Maria Princess A.</div>
+          <div class="student-num">#10</div>
+        </div>
+      </div>
+
+      <div class="student-card fade-in">
+        <div>
+          <div class="student-name">Clacio, Shane Kristine B.</div>
+          <div class="student-num">#11</div>
+        </div>
+      </div>
+
+      <div class="student-card fade-in">
+        <div>
+          <div class="student-name">Napay, Angelica P.</div>
+          <div class="student-num">#12</div>
+        </div>
+      </div>
+
+      <div class="student-card fade-in">
+        <div>
+          <div class="student-name">Oliva, Ruby Jean C.</div>
+          <div class="student-num">#13</div>
+        </div>
+      </div>
+
+      <div class="student-card fade-in">
+        <div>
+          <div class="student-name">Perez, Cherry Lyn B.</div>
+          <div class="student-num">#14</div>
+        </div>
+      </div>
+
+      <div class="student-card fade-in">
+        <div>
+          <div class="student-name">San Esteban, Rica P.</div>
+          <div class="student-num">#15</div>
+        </div>
+      </div>
+
+    </div>
+
+    <br>
+    <div class="students-strand"><h1>✦ Cookery ✦</h1></div>
+      <div class="students-grid">
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Adaque, King Felomino</div>
+            <div class="student-num">#01</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Arinal, Justine A.</div>
+            <div class="student-num">#02</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Aureus, Joshua E.</div>
+            <div class="student-num">#03</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Caudilla, Phrinz Lawrence B.</div>
+            <div class="student-num">#04</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Colinares, Jeffrey</div>
+            <div class="student-num">#05</div>
+          </div>
+        </div>
+  
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Cortes, Marvi Jr. C.</div>
+            <div class="student-num">#06</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Fajardo, Jhon Laurence R.</div>
+            <div class="student-num">#07</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Moral, James Sheldon C.</div>
+            <div class="student-num">#08</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Moscoso, Jairo C.</div>
+            <div class="student-num">#09</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Rili, Gian Roi C.</div>
+            <div class="student-num">#10</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Rocha, Russel Y.</div>
+            <div class="student-num">#11</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Abay, Trisha Joy D.</div>
+            <div class="student-num">#12</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Base, Daphney L.</div>
+            <div class="student-num">#13</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Bigay, May Ann P.</div>
+            <div class="student-num">#14</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Carillo, Bea Joy R.</div>
+            <div class="student-num">#15</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Falo, Jenneth E.</div>
+            <div class="student-num">#16</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Flores, Lea Lee T.</div>
+            <div class="student-num">#17</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Frijinal, Lyca C.</div>
+            <div class="student-num">#18</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Lasic, Neah Anthonette C.</div>
+            <div class="student-num">#19</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Latinazo, Rhemia Faith F.</div>
+            <div class="student-num">#20</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Nocus, Maryjane C.</div>
+            <div class="student-num">#21</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Perez, Edilen L.</div>
+            <div class="student-num">#22</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Puso, Kimberly C.</div>
+            <div class="student-num">#23</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Roldan, Angeline C.</div>
+            <div class="student-num">#24</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Ruz, Janine SB.</div>
+            <div class="student-num">#25</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Singsing, Nicole R.</div>
+            <div class="student-num">#26</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Sarcia, Kyla R.</div>
+            <div class="student-num">#27</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Villafranca, Zilia M.</div>
+            <div class="student-num">#28</div>
+          </div>
+        </div>
+
+        <div class="student-card fade-in">
+          <div>
+            <div class="student-name">Villanueva, Iris R.</div>
+            <div class="student-num">#29</div>
+          </div>
+        </div>
+
+      </div>
+  </section>
+
+    <!-- Quote -->
+    <div style="
+          margin-top: 2.5rem;
+          padding: 1.5rem;
+          background: white;
+          border-left: 4px solid var(--kraft);
+          box-shadow: 2px 3px 10px var(--shadow);
+          position: relative;
+        ">
+      <div class="tape" style="
+            background: rgba(255, 220, 130, 0.65);
+            width: 44px;
+            height: 13px;
+            position: absolute;
+            top: -6px;
+            left: 30px;
+            border-radius: 2px;
+          "></div>
+      <p style="
+            font-family: &quot;Playfair Display&quot;, serif;
+            font-style: italic;
+            font-size: 20px;
+            color: var(--ink);
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+          ">
+        "Courage is the most important of all the virtues, because without
+        courage, you can't practice any other virtue consistently."
+      </p>
+    </div>
+  </section>
+
+  <!-- ════ FOOTER ════ -->
+  <footer class="footer">
+    <div class="footer-title">12 — Courage</div>
+    <div class="footer-sub">School Year 2025 – 2026</div>
+    <br>
+    <p style="
+          font-family: &quot;Caveat&quot;, cursive;
+          font-size: 16px;
+          color: rgba(245, 236, 215, 0.5);
+          line-height: 1.6;
+        ">
+      Made with love by the students<br />and teachers of Section Courage.
+    </p>
+    <p style="
+          font-family: &quot;DM Sans&quot;, sans-serif;
+          font-size: 11px;
+          color: rgba(245, 236, 215, 0.3);
+          margin-top: 1.5rem;
+          letter-spacing: 2px;
+        ">
+      MEMORIES LAST FOREVER
+    </p>
+
+    <div class="madeby">
+      <h5>Made by:</h5>
+      <p>Presco, Mark Anthony C.</p>
+      <p>Oliva, Ruby Jean C.</p>
+    </div>
+
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" onclick="closeLightbox(event)">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" onclick="closeLightboxDirect()" aria-label="Close">×</button>
+
+      <div id="lb-content-wrapper">
+        <!-- image mode -->
+        <div class="lightbox-img" id="lb-img"></div>
+        <!-- video mode -->
+        <div id="lb-video-wrapper" style="display:none;width:100%;max-width:720px;margin:0 auto;">
+          <video id="lb-video"
+            controls
+            playsinline
+            style="width:100%;max-height:70vh;border-radius:8px;background:#000;display:block;">
+          </video>
+        </div>
+      </div>
+
+      <p class="lightbox-caption" id="lb-caption"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  
+</body>
+
+</html>

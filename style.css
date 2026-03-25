@@ -1,0 +1,768 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cream: #fdf6ed;
+  --warm-white: #fffbf4;
+  --paper: #f5ecd7;
+  --kraft: #d4a96a;
+  --tape: rgba(255, 220, 130, 0.55);
+  --ink: #2c1a0e;
+  --ink-light: #5c3d1e;
+  --red-string: #c0392b;
+  --washi-blue: #7ba7bc;
+  --washi-pink: #e8a0b4;
+  --washi-green: #8fbc8f;
+  --washi-yellow: #f5c842;
+  --shadow: rgba(44, 26, 14, 0.13);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='60' height='60' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  font-family: "DM Sans", sans-serif;
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ── COVER ── */
+.cover {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem 3rem;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 20% 80%,
+      rgba(212, 169, 106, 0.18) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(123, 167, 188, 0.15) 0%,
+      transparent 55%
+    ),
+    var(--cream);
+}
+
+.cover-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 27px,
+    rgba(180, 140, 80, 0.09) 28px
+  );
+}
+
+.cover-photo-cluster {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  margin-bottom: 2rem;
+}
+
+.photo-frame {
+  position: absolute;
+  background: white;
+  padding: 8px 8px 28px;
+  box-shadow:
+    3px 4px 14px var(--shadow),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.photo-frame:hover {
+  transform: rotate(0deg) scale(1.04) !important;
+  box-shadow: 5px 7px 22px var(--shadow);
+  z-index: 10 !important;
+}
+
+.photo-frame .caption {
+  font-family: "Caveat", cursive;
+  font-size: 13px;
+  color: var(--ink-light);
+  text-align: center;
+  margin-top: 6px;
+  display: block;
+}
+
+/* .photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #e8dcc8;
+  font-size: 48px;
+} */
+
+/* Tape strips */
+.tape {
+  position: absolute;
+  z-index: 5;
+  background: var(--tape);
+  border-radius: 2px;
+}
+.tape-h {
+  width: 48px;
+  height: 16px;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.tape-v {
+  width: 16px;
+  height: 48px;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.tape-tl {
+  width: 44px;
+  height: 14px;
+  top: -7px;
+  left: -8px;
+  transform: rotate(-35deg);
+}
+.tape-tr {
+  width: 44px;
+  height: 14px;
+  top: -7px;
+  right: -8px;
+  transform: rotate(35deg);
+}
+
+/* Cover title */
+.cover-title-block {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.grade-label {
+  font-family: "Caveat", cursive;
+  font-size: 20px;
+  color: var(--washi-blue);
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.main-title {
+  font-family: "Playfair Display", serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+  display: block;
+}
+
+.subtitle {
+  font-family: "Caveat", cursive;
+  font-size: 22px;
+  color: var(--ink-light);
+  margin-top: 4px;
+  display: block;
+}
+
+.year-badge {
+  display: inline-block;
+  margin-top: 12px;
+  background: var(--kraft);
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  padding: 6px 18px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.scroll-hint {
+  margin-top: 2.5rem;
+  font-family: "Caveat", cursive;
+  font-size: 15px;
+  color: var(--kraft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* ── NAV TABS ── */
+.nav-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--warm-white);
+  border-bottom: 2px solid var(--paper);
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  justify-content: center;
+}
+.nav-tabs::-webkit-scrollbar {
+  display: none;
+}
+.nav-tabs a {
+  text-decoration: none;
+}
+.nav-tab {
+  flex-shrink: 0;
+  padding: 14px 18px;
+  font-family: "Caveat", cursive;
+  font-size: 16px;
+  color: var(--ink-light);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+  white-space: nowrap;
+}
+.nav-tab.active {
+  color: var(--ink);
+  border-bottom-color: var(--kraft);
+}
+
+/* ── SECTIONS ── */
+.section {
+  padding: 2rem 1.25rem;
+}
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 26px;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+.section-rule {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--kraft), transparent);
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+/* ── COLLAGE GRID ── */
+.collage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.collage-card {
+  background: white;
+  padding: 8px 8px 24px;
+  box-shadow: 2px 3px 10px var(--shadow);
+  position: relative;
+  transition: transform 0.25s ease;
+  cursor: pointer;
+}
+.collage-card:hover {
+  transform: scale(1.03) rotate(0.5deg);
+  z-index: 5;
+}
+.collage-card.tall {
+  grid-row: span 4;
+}
+.collage-card.wide {
+  grid-column: span 2;
+}
+
+/* .collage-img {
+  width: 100%;
+  background: #e8dcc8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+} */
+
+.card-caption {
+  font-family: "Caveat", cursive;
+  font-size: 13px;
+  color: var(--ink-light);
+  text-align: center;
+  margin-top: 8px;
+  display: block;
+}
+
+/* Washi tape decoration */
+.washi {
+  position: absolute;
+  height: 12px;
+  border-radius: 1px;
+  opacity: 0.75;
+  z-index: 2;
+}
+.washi-top {
+  top: -6px;
+  left: 20%;
+  width: 60%;
+}
+.washi-corner {
+  top: -5px;
+  right: 10px;
+  width: 30px;
+  transform: rotate(15deg);
+}
+
+/* ── VIDEO SECTION ── */
+.direction {
+  font-family: "Caveat", cursive;
+  font-size: 15px;
+  color: var(--kraft);
+  margin-bottom: 1.25rem;
+}
+
+.video-scroll {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 8px;
+  padding-left: 2px;
+}
+.video-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── VIDEO THUMB CARD ── */
+.video-thumb {
+  flex-shrink: 0;
+  width: 160px;
+  background: white;
+  padding: 7px 7px 24px;
+  box-shadow: 2px 3px 10px var(--shadow);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.video-thumb:hover {
+  transform: rotate(-1deg) scale(1.05);
+  box-shadow: 4px 6px 18px var(--shadow);
+  z-index: 5;
+}
+
+/* ── VIDEO PREVIEW (the thumbnail frame) ── */
+.video-preview {
+  width: 100%;
+  height: 115px;
+  background: linear-gradient(135deg, #3a3a5c 0%, #5a4060 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Muted video used as a frame grab — fills the preview */
+.video-preview video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.75;
+}
+
+/* Dark gradient scrim so the play button is always readable */
+.video-preview::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.45) 100%);
+  pointer-events: none;
+}
+
+/* Circular play button — centred above scrim */
+.play-btn {
+  position: relative;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  padding-left: 3px; /* optical centre for ▶ */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.video-thumb:hover .play-btn {
+  transform: scale(1.12);
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Emoji watermark — faint, bottom-right corner */
+.video-emoji {
+  position: absolute;
+  z-index: 1;
+  font-size: 34px;
+  opacity: 0.18;
+  right: 5px;
+  bottom: 3px;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Photo/collage image helpers — video-thumb intentionally excluded */
+.photo-placeholder,
+.collage-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #e8dcc8;
+}
+
+.photo-placeholder img,
+.collage-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── PEOPLE SECTION ── */
+.people-section {
+  background: var(--warm-white);
+}
+
+.teacher-block {
+  background: white;
+  border-left: 4px solid var(--kraft);
+  padding: 1rem 1rem 1rem 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 1px 2px 8px var(--shadow);
+  position: relative;
+}
+.teacher-block::before {
+  content: "📌";
+  position: absolute;
+  top: -8px;
+  right: 12px;
+  font-size: 18px;
+}
+
+.teacher-name {
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.teacher-role {
+  font-family: "Caveat", cursive;
+  font-size: 14px;
+  color: var(--kraft);
+  margin-top: 2px;
+  display: block;
+}
+
+.students-title {
+  font-family: "Caveat", cursive;
+  font-size: 20px;
+  color: var(--ink-light);
+  margin: 1.5rem 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.students-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--paper);
+  border: none;
+}
+
+.students-strand {
+  font-family: "Caveat", cursive;
+  font-size: 16px;
+  color: black;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.students-strand h1 {
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+  margin: 0 auto;
+}
+.students-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.student-card {
+  background: white;
+  padding: 10px 12px;
+  box-shadow: 1px 2px 6px var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.student-card:hover {
+  transform: translateY(-2px);
+}
+
+.student-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  flex-shrink: 0;
+  color: white;
+}
+
+.student-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.student-num {
+  font-family: "Caveat", cursive;
+  font-size: 10px;
+  color: var(--kraft);
+}
+
+/* ── MEMORIES ── */
+.memory-wall {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.memory-sticker {
+  background: white;
+  padding: 10px 14px;
+  box-shadow: 2px 3px 8px var(--shadow);
+  font-family: "Caveat", cursive;
+  font-size: 15px;
+  color: var(--ink);
+  position: relative;
+  transform-origin: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  max-width: 160px;
+  text-align: center;
+  line-height: 1.4;
+}
+.memory-sticker:hover {
+  transform: scale(1.06) rotate(-1deg) !important;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 2rem 1.5rem 3rem;
+  text-align: center;
+}
+.footer-title {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 28px;
+  color: var(--kraft);
+  margin-bottom: 0.5rem;
+}
+.footer-sub {
+  font-family: "Caveat", cursive;
+  font-size: 16px;
+  color: rgba(245, 236, 215, 0.6);
+}
+.footer-heart {
+  font-size: 28px;
+  margin: 1.5rem 0;
+}
+.madeby {
+  margin-top: 1.5rem;
+}
+.madeby h5 {
+  font-family: "Caveat", cursive;
+  font-size: 14px;
+  color: rgba(245, 236, 215, 0.8);
+  margin-bottom: 6px;
+}
+.madeby p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  color: rgba(245, 236, 215, 0.8);
+    
+}
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(44, 26, 14, 0.9);
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: 0 auto;
+}
+.lightbox.open {
+  display: flex;
+}
+.lightbox-inner {
+  background: white;
+  padding: 10px 10px 30px;
+  max-width: 380px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: popIn 0.25s ease;
+}
+@keyframes popIn {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 32px;
+  height: 32px;
+  background: var(--ink);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-img {
+  width: 100%;
+  height: 100%; /* Increased height for better photo viewing */
+  background: #e8dcc8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  overflow: hidden; /* Keeps images contained */
+}
+.lightbox-img img {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+.lightbox-caption {
+  font-family: "Caveat", cursive;
+  font-size: 18px;
+  color: var(--ink-light);
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ── ANIMATE IN ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* number for students */
+.n1 {
+  background: #7ba7bc;
+}
+.n2 {
+  background: #e8a0b4;
+}
+.n3 {
+  background: #8fbc8f;
+}
+.n4 {
+  background: #d4a96a;
+}
+.n5 {
+  background: #c0392b;
+}
+.n6 {
+  background: #7ba7bc;
+}
+
+/* MOBILE: Make collage cards full width */
+@media (max-width: 480px) {
+  .collage-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .collage-card, 
+  .collage-card.wide, 
+  .collage-card.tall {
+    grid-column: span 1 !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .collage-img {
+    height: 250px !important; /* Consistent height on mobile */
+  }
+}
