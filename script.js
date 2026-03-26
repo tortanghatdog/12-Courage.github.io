@@ -257,7 +257,7 @@ const studentProfiles = {
     num: "#14"
   },
   "Carillo, Bea Joy R.": {
-    photo: null,
+    photo: "students_profile/Carillo, Bea Carillo",
     strand: "Cookery",
     num: "#15"
   },
@@ -287,7 +287,7 @@ const studentProfiles = {
     num: "#20"
   },
   "Nocus, Maryjane C.": {
-    photo: "students_profile/MZguhTrc.jpg",
+    photo: "null",
     strand: "Cookery",
     num: "#21"
   },
