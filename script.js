@@ -420,8 +420,8 @@ document.addEventListener("keydown", (e) => {
 
 // Wire up student cards to open the profile modal
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".student-card", ".teacher-block").forEach((card) => {
-    const nameEl = card.querySelector(".student-card", ".teacher-block");
+  document.querySelectorAll(".student-card").forEach((card) => {
+    const nameEl = card.querySelector(".student-name"); // ✅ correct selector
     if (nameEl) {
       card.addEventListener("click", () => {
         openProfileModal(nameEl.textContent.trim());
