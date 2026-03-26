@@ -297,7 +297,7 @@ body {
   z-index: 5;
 }
 .collage-card.tall {
-  grid-row: span 4;
+  grid-row: span 2;
 }
 .collage-card.wide {
   grid-column: span 2;
@@ -695,13 +695,13 @@ body {
 }
 .lightbox-img {
   width: 100%;
-  height: 100%;
+  height: 100%; /* Increased height for better photo viewing */
   background: #e8dcc8;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 64px;
-  overflow: hidden;
+  overflow: hidden; /* Keeps images contained */
 }
 .lightbox-img img {
   display: block;
@@ -747,22 +747,259 @@ body {
 .n6 {
   background: #7ba7bc;
 }
+/* ── STUDENT PROFILE MODAL ── */
+.profile-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(44, 26, 14, 0.88);
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.profile-modal-overlay.open {
+  display: flex;
+}
 
-/* MOBILE: Make collage cards full width */
-/* @media (max-width: 480px) {
-  .collage-grid {
-    grid-template-columns: 1fr !important;
-  }
-  
-  .collage-card, 
-  .collage-card.wide, 
-  .collage-card.tall {
-    grid-column: span 1 !important;
-    width: 100% !important;
-    height: auto !important;
-  }
+.profile-modal {
+  background: var(--cream);
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='60' height='60' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  max-width: 360px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.55);
+  animation: profilePopIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-top: 4px solid var(--kraft);
+  overflow: hidden;
+}
 
-  .collage-img {
-    height: 250px !important; /* Consistent height on mobile */
-  }
-}*/
+@keyframes profilePopIn {
+  from { transform: scale(0.82) translateY(20px); opacity: 0; }
+  to   { transform: scale(1) translateY(0);        opacity: 1; }
+}
+
+/* Lined paper background inside modal */
+.profile-modal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    transparent, transparent 27px,
+    rgba(180, 140, 80, 0.08) 28px
+  );
+  z-index: 0;
+}
+
+/* Header strip */
+.pm-header {
+  background: var(--kraft);
+  padding: 10px 16px 8px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pm-header-title {
+  font-family: "Caveat", cursive;
+  font-size: 13px;
+  letter-spacing: 2.5px;
+  color: white;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+.pm-close {
+  width: 28px;
+  height: 28px;
+  background: var(--kraft);
+  color: black;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.pm-close:hover { background: var(--red-string); }
+
+/* Polaroid photo block */
+.pm-photo-wrap {
+  position: relative;
+  z-index: 1;
+  padding: 20px 20px 0;
+  display: flex;
+  justify-content: center;
+}
+.pm-polaroid {
+  background: white;
+  padding: 10px 10px 32px;
+  box-shadow: 3px 5px 18px var(--shadow);
+  width: 200px;
+  position: relative;
+  transform: rotate(-1.5deg);
+}
+/* washi tape on polaroid */
+.pm-polaroid::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 14px;
+  background: rgba(232, 160, 180, 0.65);
+  border-radius: 2px;
+  z-index: 2;
+}
+/* .pm-photo-square {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  background: #e8dcc8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+} */
+.pm-photo-square img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.pm-photo-square .pm-avatar-circle {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 3px solid var(--paper);
+  box-shadow: 0 2px 10px var(--shadow);
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.pm-photo-square .pm-avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+/* Fallback initials avatar */
+.pm-initials-avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: var(--washi-blue);
+  border: 3px solid var(--paper);
+  box-shadow: 0 2px 10px var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  font-size: 44px;
+  font-weight: 700;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Info block below polaroid */
+.pm-info {
+  position: relative;
+  z-index: 1;
+  padding: 16px 20px 22px;
+  text-align: center;
+}
+
+.pm-name {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.pm-divider {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--kraft), transparent);
+  margin: 0 auto 8px;
+  border-radius: 2px;
+}
+
+.pm-strand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: white;
+  border: 1.5px solid var(--paper);
+  box-shadow: 1px 2px 6px var(--shadow);
+  padding: 5px 14px;
+  font-family: "Caveat", cursive;
+  font-size: 15px;
+  color: var(--ink-light);
+  letter-spacing: 0.5px;
+}
+
+.pm-strand-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--kraft);
+  flex-shrink: 0;
+}
+
+.pm-num-label {
+  font-family: "Caveat", cursive;
+  font-size: 13px;
+  color: var(--kraft);
+  margin-top: 10px;
+  display: block;
+}
+
+/* Corner stamp decoration */
+.pm-stamp {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--kraft);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Caveat", cursive;
+  font-size: 8px;
+  color: var(--kraft);
+  text-align: center;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.55;
+  transform: rotate(8deg);
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .profile-modal { max-width: 95vw; }
+  .pm-polaroid { width: 170px; }
+  .pm-photo-square { width: 150px; height: 150px; }
+  .pm-photo-square .pm-avatar-circle,
+  .pm-initials-avatar { width: 130px; height: 130px; }
+}
+
+/* Make student cards show pointer and feel clickable */
+.student-card {
+  cursor: pointer;
+}
