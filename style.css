@@ -981,7 +981,7 @@ body {
   transform: rotate(8deg);
 }
 
-/* Responsive */
+/* /* Responsive */
 @media (max-width: 400px) {
   .profile-modal { 
     max-width: 90vw; 
@@ -990,4 +990,4 @@ body {
     width: 180px; /* Adjusting the polaroid width slightly for small screens */
     padding: 8px 8px 25px; /* Reducing padding to maximize image space */
   }
-}
+} */
