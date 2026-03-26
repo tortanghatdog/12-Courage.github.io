@@ -257,7 +257,7 @@ const studentProfiles = {
     num: "#14"
   },
   "Carillo, Bea Joy R.": {
-    photo: "students_profile/Carillo, Bea Carillo",
+    photo: "students_profile/Carillo, Bea Carillo.jpg",
     strand: "Cookery",
     num: "#15"
   },
