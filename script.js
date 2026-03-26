@@ -110,6 +110,11 @@ window.addEventListener(
 // ── STUDENT PROFILE DATA ──
 const studentProfiles = {
   // ICT Strand
+  "Gorubat, Cristine Quiom": {
+    photo: "students_profile/Gorubat, Cristine Quiom.jpg",
+    strand: "Class Adviser",
+    role: "✦ Section Courage ✦"
+  },
   "Azur, John Faust Walter B.": {
     photo: "students_profile/Azur, John Faust Walter.jpg",
     strand: "Information & Communications Technology",
@@ -287,7 +292,7 @@ const studentProfiles = {
     num: "#20"
   },
   "Nocus, Maryjane C.": {
-    photo: "null",
+    photo: "students_profile/MZguhTrc.jpg",
     strand: "Cookery",
     num: "#21"
   },
@@ -347,7 +352,15 @@ function openProfileModal(name) {
   // Set name & strand
   nameEl.textContent = name;
   strandEl.textContent = data.strand;
-  numEl.textContent = "Student " + data.num;
+
+  // Show student number OR adviser label
+  if (data.num) {
+    numEl.textContent = "Student " + data.num;
+    numEl.style.display = "";
+  } else {
+    numEl.textContent = data.role || "";
+    numEl.style.display = data.role ? "" : "none";
+  }
 
   // Build photo or initials avatar
   photoSquare.innerHTML = "";
@@ -407,8 +420,8 @@ document.addEventListener("keydown", (e) => {
 
 // Wire up student cards to open the profile modal
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".student-card").forEach((card) => {
-    const nameEl = card.querySelector(".student-name");
+  document.querySelectorAll(".student-card", ".teacher-block").forEach((card) => {
+    const nameEl = card.querySelector(".student-card", ".teacher-block");
     if (nameEl) {
       card.addEventListener("click", () => {
         openProfileModal(nameEl.textContent.trim());
