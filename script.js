@@ -421,7 +421,7 @@ document.addEventListener("keydown", (e) => {
 // Wire up student cards to open the profile modal
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".student-card").forEach((card) => {
-    const nameEl = card.querySelector(".student-name"); // ✅ correct selector
+    const nameEl = card.querySelector(".student-name");
     if (nameEl) {
       card.addEventListener("click", () => {
         openProfileModal(nameEl.textContent.trim());
